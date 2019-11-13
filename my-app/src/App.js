@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // return jsx
   return (
     <div className="App">
       <header className="App-header">
