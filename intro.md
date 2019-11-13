@@ -3,6 +3,8 @@ React is a Javascript Library created by Facebook and is used for building user 
 
 React runs on the client and there's benefits to that: Performance bumps, makes interfaces more interactive, no need for reloading pages for everything to happen (only certain parts are reloaded). 
 
+React is a single page application framework, meaning that everything runs through one single page (index.html).
+
 # Why use React?
 - Makes front-end JavaScript much easier
 - Uses self contained, independent components with their own state

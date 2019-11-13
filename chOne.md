@@ -46,6 +46,46 @@ Class Post extends React.Component {
     - React requires that your render() is pure. Pure functions are those that do not ahve any side-effects and will always return the same output when the smae inputs are passed. This means that you can not setState() within a render(). 
 - componentDidMount()
 
+# Create React App
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+# Info on the JSON File
+### dependencies
+```
+"dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0"
+  }
+```
+- React is the library itself
+- dom deals with loading components in the browser
+- scripts deals with the dev server and allows us to test our application
+### scripts
+```
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+```
+- start: starts our dev server
+- build: compiles all of our code into something the browser can read
+
+# How a react application is organized and rendered
+- The entry point is index.html
+```
+<div id="root"></div>   // app component gets put here
+```
+- index.js is the entry point for react. It is usually located in the src folder.
+```
+ReactDOM.render(<App />, document.getElementById('root'));  // ReactDOM is rendering the App component into the element with the id 'root'
+```
 
 # Developer tools 
 - React Developer Tools (Chrome Extension)
