@@ -1,4 +1,6 @@
 import React from 'react';
+import Todos from './components/Todos';
+
 import './App.css';
 
 // function component: creating a component without using 
@@ -7,7 +9,8 @@ function App() {
   // return jsx
   return (
     <div className="App">
-    <h1></h1>
+      {/* embeds Todos component */}
+      <Todos />
     </div>
   );
 }

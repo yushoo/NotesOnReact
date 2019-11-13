@@ -18,3 +18,7 @@ class Welcome extends React.Component {
   }
 }
 ```
+
+## Conventions
+- Create a separate components file in src in application folder
+- Capitilize the first letter of component file. ("Todos.js")
