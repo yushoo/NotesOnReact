@@ -16,6 +16,7 @@ function App() {
           passing it into the Todos component as 
           a prop.
       */}
+      {/* <Todos todos={Todos.state.todos}/> */}
       <Todos />
     </div>
   );

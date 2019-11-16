@@ -90,3 +90,5 @@ ReactDOM.render(<App />, document.getElementById('root'));  // ReactDOM is rende
 # Developer tools 
 - React Developer Tools (Chrome Extension)
 - Node for server for testing application
+
+- rce (tab) auto generates a component 
