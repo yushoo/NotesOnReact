@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import TodoItem from './TodoItem';
 class Todos extends Component {
     state = {
         todos: [
@@ -22,8 +22,11 @@ class Todos extends Component {
       }
 
     render() {
+        // can't cycle through props because state is within Todos.
+        // so there is no need to send in the state as a property
         return this.state.todos.map((todo) => (
-            <h3>{ todo.title }</h3>
+            <TodoItem key={todo.id} todo={todo} />
+            //<h3>{ todo.title }</h3>
         ));
     }
 }
