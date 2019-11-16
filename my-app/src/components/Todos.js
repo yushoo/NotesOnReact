@@ -22,12 +22,9 @@ class Todos extends Component {
       }
 
     render() {
-        console.log(this.state);
-        return (
-            <div>
-                <h1>Todos</h1>
-            </div>
-        );
+        return this.state.todos.map((todo) => (
+            <h3>{ todo.title }</h3>
+        ));
     }
 }
 

@@ -11,7 +11,11 @@ function App() {
   // return jsx
   return (
     <div className="App">
-      {/* embeds Todos component */}
+      {/* embeds Todos component
+          Taking the todos from the state and
+          passing it into the Todos component as 
+          a prop.
+      */}
       <Todos />
     </div>
   );
