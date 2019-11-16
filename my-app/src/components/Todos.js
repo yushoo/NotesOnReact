@@ -12,7 +12,7 @@ class Todos extends Component {
           {
             id: 2,
             title: 'Dinner with friends',
-            completed: false
+            completed: true
           },
           {
             id: 3,
@@ -22,11 +22,17 @@ class Todos extends Component {
         ]
       }
 
+    // custom methods do not have access to Component
+    markComplete = (e) => {
+        console.log('Hello');
+    }
+
     render() {
         // can't cycle through props because state is within Todos.
         // so there is no need to send in the state as a property
         return this.state.todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} />
+            <TodoItem key={todo.id} todo={todo} 
+            markComplete={this.markComplete}/>
             //<h3>{ todo.title }</h3>
         ));
     }
