@@ -13,3 +13,6 @@ I am using Traversy Media and documentation for my learning of React.js. In Trav
 - Summary of lifecycle methods
 - Developer tools
 - React application organization
+
+### chTwo
+- PropTypes
