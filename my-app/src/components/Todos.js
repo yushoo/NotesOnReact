@@ -12,7 +12,7 @@ class Todos extends Component {
           {
             id: 2,
             title: 'Dinner with friends',
-            completed: true
+            completed: false
           },
           {
             id: 3,
@@ -24,7 +24,12 @@ class Todos extends Component {
 
     // custom methods do not have access to Component
     markComplete = (id) => {
-        console.log(id);
+        this.setState({ todos: this.state.todos.map(todo => {
+            if(todo.id == id){
+                todo.completed = !todo.completed;
+            }
+            return todo; 
+        }) });
     }
 
     render() {
