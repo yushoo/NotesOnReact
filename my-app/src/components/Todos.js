@@ -23,8 +23,10 @@ class Todos extends Component {
       }
 
     // custom methods do not have access to Component
+    // toggle the css. id passed in from todo.js when markCompleted is called
     markComplete = (id) => {
         this.setState({ todos: this.state.todos.map(todo => {
+            // find the correct todo by iterating through the array of todos
             if(todo.id == id){
                 todo.completed = !todo.completed;
             }
@@ -32,12 +34,21 @@ class Todos extends Component {
         }) });
     }
 
+    // Delete Todo
+    delTodo = (id) => {
+        this.setState({ todos: [...this.state.todos.filter(todo => todo.id
+            !== id)] });
+    }
+
     render() {
         // can't cycle through props because state is within Todos.
         // so there is no need to send in the state as a property
         return this.state.todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} 
-            markComplete={this.markComplete}/>
+            <TodoItem 
+            key={todo.id} 
+            todo={todo} 
+            markComplete={this.markComplete} 
+            delTodo={this.delTodo}/>
             //<h3>{ todo.title }</h3>
         ));
     }
