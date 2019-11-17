@@ -23,8 +23,8 @@ class Todos extends Component {
       }
 
     // custom methods do not have access to Component
-    markComplete = (e) => {
-        console.log('Hello');
+    markComplete = (id) => {
+        console.log(id);
     }
 
     render() {
