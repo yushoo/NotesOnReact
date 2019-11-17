@@ -13,3 +13,39 @@ propTypes: {
 }
 
 ```
+# Passing Functions to Components 
+(passing an event handler such as onClick) to a component)
+Pass event handlers and other functions as props to child components: 
+```
+<button onClick={this.handleClick}>
+```
+### Binding
+To give access to the parent component in the handler, you need to bind the function to the component instance. There are severla wasy to make sure functions have access to component attributes like this.props and this.state. 
+
+-Bind in Constructor
+```
+class Foo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    console.log('Click happened');
+  }
+  render() {
+    return <button onClick={this.handleClick}>Click Me</button>;
+  }
+}
+
+```
+- Bind in Render
+```
+class Foo extends Component {
+  handleClick() {
+    console.log('Click happened');
+  }
+  render() {
+    return <button onClick={this.handleClick.bind(this)}>Click Me</button>;
+  }
+}
+```
