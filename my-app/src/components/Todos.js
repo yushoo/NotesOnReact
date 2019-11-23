@@ -35,6 +35,8 @@ class Todos extends Component {
     }
 
     // Delete Todo
+    // copy everything that is already there except for the one being deleted
+    // use the spread operator
     delTodo = (id) => {
         this.setState({ todos: [...this.state.todos.filter(todo => todo.id
             !== id)] });

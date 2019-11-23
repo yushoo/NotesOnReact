@@ -1,3 +1,6 @@
+# Props
+Props allow us to pass information to a Component. 
+
 # PropTypes (Type Checking)
 In React there are attributes called "props" that can be of any type. The flexibility has both pros and cons. If a component utilizes a particular type, propTypes provides a solution to that. PropTypes defines type and which props are required. Two benefits: 
 1. You can easily open up a component and check which props are required and what type they should be.
@@ -20,7 +23,7 @@ Pass event handlers and other functions as props to child components:
 <button onClick={this.handleClick}>
 ```
 ### Binding
-To give access to the parent component in the handler, you need to bind the function to the component instance. There are severla wasy to make sure functions have access to component attributes like this.props and this.state. 
+To give access to the parent component in the handler, you need to bind the function to the component instance. There are several ways to make sure functions have access to component attributes like this.props and this.state. 
 
 -Bind in Constructor
 ```
