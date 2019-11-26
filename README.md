@@ -18,4 +18,5 @@ I am using Traversy Media and documentation for my learning of React.js. In Trav
 - PropTypes
 
 ### Extra
-Installed uuid to generate new id's when a new todo is created. 
+- Installed uuid to generate new id's when a new todo is created. 
+- Uses jsonPlaceholder api to fill in the todo list. 
