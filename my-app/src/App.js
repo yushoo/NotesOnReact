@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
+import About from './components/pages/About';
 import AddTodo from './components/AddTodo';
 
 import './App.css';
@@ -11,6 +13,7 @@ function App() {
   
   // return jsx
   return (
+    <Router>
     <div className="App">
       <div className = "container">
         <Header />
@@ -21,10 +24,17 @@ function App() {
             a prop.  
         */}
         {/* <Todos todos={Todos.state.todos}/> */}
-        <Todos />
+        <Route exact path = "/" render = {props => (
+          <React.Fragment>
+              <Todos />
+          </React.Fragment>
+        )}>
+        </Route>
+        <Route path = "/about" component = {About} />
       </div>
 
     </div>
+    </Router>
   );
 }
 
