@@ -7,15 +7,19 @@ I am using Traversy Media and documentation for my learning of React.js. In Trav
 ### intro
 - What is React?
 
-### chOne
+### ch_ONE
 - Brief summary of React States
 - Using create-react-app to create starter react application build
 - Summary of lifecycle methods
 - Developer tools
 - React application organization
 
-### chTwo
+### ch_TWO
 - PropTypes
+
+### ch_THREE
+- React Router
+- HTTP Requests
 
 ### Extra
 - Installed uuid to generate new id's when a new todo is created. 
