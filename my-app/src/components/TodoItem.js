@@ -12,8 +12,6 @@ export class TodoItem extends Component {
         }
     }
 
-  
-
     render() {
         // destructure and accessing from todos.js 
         const { id, title } = this.props.todo;

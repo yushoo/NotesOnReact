@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
+import AddTodo from './AddTodo';
 class Todos extends Component {
     state = {
         todos: [
@@ -42,17 +43,35 @@ class Todos extends Component {
             !== id)] });
     }
 
+    addTodo = (title) => {
+        const newTodo = {
+          id: 4,
+          title: title,
+          completed: false
+        }
+        this.setState({ todos: [...this.state.todos, newTodo]});
+    }
+
+
     render() {
         // can't cycle through props because state is within Todos.
         // so there is no need to send in the state as a property
-        return this.state.todos.map((todo) => (
-            <TodoItem 
-            key={todo.id} 
-            todo={todo} 
-            markComplete={this.markComplete} 
-            delTodo={this.delTodo}/>
-            //<h3>{ todo.title }</h3>
-        ));
+        return (
+            <div>
+              <AddTodo addTodo = {this.addTodo}/>
+              {this.state.todos.map((todo) => (
+                <div>
+                  <TodoItem 
+                    key={todo.id} 
+                    todo={todo} 
+                    markComplete={this.markComplete} 
+                    delTodo={this.delTodo}
+                  />
+                  {/* <h3>{ todo.title }</h3> */}
+                </div>
+              ))}
+          </div>
+        );
     }
 }
 

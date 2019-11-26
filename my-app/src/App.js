@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
 
 import './App.css';
 
@@ -11,14 +12,18 @@ function App() {
   // return jsx
   return (
     <div className="App">
-      <Header />
-      {/* embeds Todos component
-          Taking the todos from the state and
-          passing it into the Todos component as 
-          a prop.
-      */}
-      {/* <Todos todos={Todos.state.todos}/> */}
-      <Todos />
+      <div className = "container">
+        <Header />
+        {/* <AddTodo /> */}
+        {/* embeds Todos component
+            Taking the todos from the state and
+            passing it into the Todos component as 
+            a prop.  
+        */}
+        {/* <Todos todos={Todos.state.todos}/> */}
+        <Todos />
+      </div>
+
     </div>
   );
 }
