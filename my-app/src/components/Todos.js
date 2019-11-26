@@ -2,21 +2,22 @@ import React, {Component} from 'react';
 import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 import AddTodo from './AddTodo';
+import uuid from 'uuid';
 class Todos extends Component {
     state = {
         todos: [
           {
-            id: 1,
+            id: uuid.v4(),
             title: 'take out the trash',
             completed: false
           },
           {
-            id: 2,
+            id: uuid.v4(),
             title: 'Dinner with friends',
             completed: false
           },
           {
-            id: 3,
+            id: uuid.v4(),
             title: 'meeting',
             completed: false
           }
@@ -45,7 +46,7 @@ class Todos extends Component {
 
     addTodo = (title) => {
         const newTodo = {
-          id: 4,
+          id: uuid.v4(),
           title: title,
           completed: false
         }

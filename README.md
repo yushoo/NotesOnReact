@@ -16,3 +16,6 @@ I am using Traversy Media and documentation for my learning of React.js. In Trav
 
 ### chTwo
 - PropTypes
+
+### Extra
+Installed uuid to generate new id's when a new todo is created. 
