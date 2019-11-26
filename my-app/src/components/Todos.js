@@ -3,27 +3,21 @@ import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 import AddTodo from './AddTodo';
 import uuid from 'uuid';
+import axios from 'axios';
 class Todos extends Component {
     state = {
         todos: [
-          {
-            id: uuid.v4(),
-            title: 'take out the trash',
-            completed: false
-          },
-          {
-            id: uuid.v4(),
-            title: 'Dinner with friends',
-            completed: false
-          },
-          {
-            id: uuid.v4(),
-            title: 'meeting',
-            completed: false
-          }
+          
         ]
       }
-
+    
+     //lifecycle method
+     componentDidMount() {
+       //.get will return promise
+       axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+        .then(res => this.setState({ todos: res.data }))
+     }
+     
     // custom methods do not have access to Component
     // toggle the css. id passed in from todo.js when markCompleted is called
     markComplete = (id) => {
@@ -40,17 +34,25 @@ class Todos extends Component {
     // copy everything that is already there except for the one being deleted
     // use the spread operator
     delTodo = (id) => {
-        this.setState({ todos: [...this.state.todos.filter(todo => todo.id
-            !== id)] });
+        axios.delete('https://jsonplaceholder.typicode.com/todos/${id}')
+          .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id
+            !== id)] }));
+
+        ;
     }
 
     addTodo = (title) => {
-        const newTodo = {
-          id: uuid.v4(),
-          title: title,
+        // const newTodo = {
+        //   id: uuid.v4(),
+        //   title: title,
+        //   completed: false
+        // }
+        axios.post('https://jsonplaceholder.typicode.com/todos', {
+          title,
           completed: false
-        }
-        this.setState({ todos: [...this.state.todos, newTodo]});
+        })
+          .then(res => this.setState({ todos: 
+            [...this.state.todos, res.data]}));
     }
 
 
@@ -78,7 +80,9 @@ class Todos extends Component {
 
 // PropTypes
 Todos.propTypes = {
-    todos: PropTypes.array.isRequired
+    todos:        PropTypes.array.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    delTodo:      PropTypes.func.isRequired,
 }
 
 export default Todos; 
