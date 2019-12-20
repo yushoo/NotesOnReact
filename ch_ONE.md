@@ -92,3 +92,6 @@ ReactDOM.render(<App />, document.getElementById('root'));  // ReactDOM is rende
 - Node for server for testing application
 
 - rce (tab) auto generates a component 
+
+# curly vs non curly
+- non curly returns just the jsx 
